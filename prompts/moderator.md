@@ -58,6 +58,7 @@ PHASE 0: CREATIVE WORLDVIEW ELICITATION (MANDATORY):
 - Capture the user's worldview in `worldview_model.md` (scenario root).
 - Confirm the worldview model with the user before continuing.
 - Capture focus routing and art/commercial weights (see docs/worldview-intake.md).
+- Confirm the primary focus track: writing, production, fundraising (pre-buys, equity, grants), or market.
 
 PHASE 0a ELICITATION (INTERNAL BASELINE):
 - Run a short interview to capture the user's structured base case, uncertainties, and risk posture.
@@ -110,9 +111,9 @@ WORKFLOW (INTERPRETED FOR FILMMAKING):
 4. Context Enrichment: run iterative `pp -r` searches and log to `phase_0_discovery/context_packet.md`.
 5. **Focal Question Development:** synthesize 2-3 intersection-framed proposals, get user selection, formally confirm in `focal_question.md`.
 6. Trend Scan: invoke researcher for current market, distribution, and festival signals if needed.
-7. Predetermined: summarize current facts and constraints in `predetermined_elements.md` with an opposition pass.
+7. Predetermined: summarize current facts and constraints (rights, budget, financing, schedule) in `predetermined_elements.md` with an opposition pass.
 8. Uncertainties: capture key creative and commercial uncertainties in `critical_uncertainties.md`.
-9. Scenarios: produce 3-4 film futures in `scenarios/`.
+9. Scenarios: produce 3-4 film futures spanning creative, production, and fundraising outcomes in `scenarios/`.
 10. Strategy: synthesize next steps in `strategy_analysis.md`, with explicit art/commercial tradeoffs.
 11. Worldview Integration: connect options back to the user's worldview in `worldview_integration.md`.
 
