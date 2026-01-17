@@ -1,0 +1,174 @@
+{
+  "permissions": {
+    "file_operations": {
+      "read": true,
+      "write": true,
+      "create": true,
+      "modify": true
+    },
+    "allowed_tools": [
+      "Read",
+      "Write",
+      "Edit",
+      "MultiEdit",
+      "TodoWrite",
+      "Bash",
+      "Task"
+    ]
+  },
+  "hooks": {
+    "pre-session": ".claude/hooks/pre-session.sh",
+    "post-task": ".claude/hooks/post-task.sh",
+    "PreToolUse": [
+      {
+        "matcher": "Task",
+        "hooks": [
+          {
+            "type": "command",
+            "command": ".claude/hooks/pre-specialist.sh"
+          }
+        ]
+      }
+    ],
+    "SubagentStop": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": ".claude/hooks/post-specialist.sh"
+          }
+        ]
+      }
+    ]
+  },
+  "environment": {
+    "SCENARIO_PANEL_ROOT": ".",
+    "SCENARIO_TEMPLATES_DIR": "./templates",
+    "SCENARIOS_DIR": "./scenarios/active"
+  },
+  "validation": {
+    "require_scenario_id": true,
+    "enforce_transcript_creation": true,
+    "require_user_validation": true,
+    "minimum_transcript_words": 100
+  },
+  "project_type": "filmmaking_panel",
+  "workflow_enforcement": "phase_based",
+  "phase_configurations": {
+    "understanding": {
+      "description": "Define the filmmaking decision brief and focus routing",
+      "required_documents": [
+        "focal_question.md"
+      ],
+      "completion_trigger": "focal_question_validated"
+    },
+    "predetermined": {
+      "description": "Document locked creative, production, and market constraints",
+      "required_documents": [
+        "predetermined_elements.md"
+      ],
+      "suggested_specialists": [
+        "gilroy",
+        "bigelow",
+        "mann",
+        "zhao"
+      ],
+      "completion_trigger": "predetermined_elements_validated"
+    },
+    "uncertainties": {
+      "description": "Surface key creative and commercial uncertainties",
+      "required_documents": [
+        "critical_uncertainties.md"
+      ],
+      "suggested_specialists": [
+        "soderbergh",
+        "villeneuve",
+        "stone",
+        "mckay",
+        "costa_gavras",
+        "alfredson"
+      ],
+      "completion_trigger": "scenario_axes_selected"
+    },
+    "scenario_development": {
+      "description": "Develop creative and market outcome scenarios",
+      "required_documents": [
+        "scenarios/*.md"
+      ],
+      "suggested_specialists": [
+        "all"
+      ],
+      "completion_trigger": "all_scenarios_complete"
+    },
+    "strategy_testing": {
+      "description": "Synthesize creative and commercial recommendations",
+      "required_documents": [
+        "strategy_analysis.md"
+      ],
+      "completion_trigger": "robust_strategies_identified"
+    }
+  },
+  "specialists": {
+    "gilroy": {
+      "name": "Tony Gilroy",
+      "focus": "Institutional realism, revolution mechanics, community under tyranny",
+      "prompt_file": "prompts/specialists/gilroy.md"
+    },
+    "bigelow": {
+      "name": "Kathryn Bigelow",
+      "focus": "Rigor, physical authenticity, present-tense realism",
+      "prompt_file": "prompts/specialists/bigelow.md"
+    },
+    "soderbergh": {
+      "name": "Steven Soderbergh",
+      "focus": "Formalism, ego-muted process, relentless iteration",
+      "prompt_file": "prompts/specialists/soderbergh.md"
+    },
+    "mann": {
+      "name": "Michael Mann",
+      "focus": "Causality, professional competence, high-stakes collision",
+      "prompt_file": "prompts/specialists/mann.md"
+    },
+    "villeneuve": {
+      "name": "Denis Villeneuve",
+      "focus": "Poetic camera, dark tension, visual truth",
+      "prompt_file": "prompts/specialists/villeneuve.md"
+    },
+    "stone": {
+      "name": "Oliver Stone",
+      "focus": "Truth-telling, confrontation with power, controversy tolerance",
+      "prompt_file": "prompts/specialists/stone.md"
+    },
+    "mckay": {
+      "name": "Adam McKay",
+      "focus": "Satire with bite, comedy played straight, political critique",
+      "prompt_file": "prompts/specialists/mckay.md"
+    },
+    "costa_gavras": {
+      "name": "Costa-Gavras",
+      "focus": "Power relationships, political thriller engine, social stakes",
+      "prompt_file": "prompts/specialists/costa_gavras.md"
+    },
+    "alfredson": {
+      "name": "Tomas Alfredson",
+      "focus": "Interiority, betrayal, silence as actor, exploratory process",
+      "prompt_file": "prompts/specialists/alfredson.md"
+    },
+    "zhao": {
+      "name": "Chloe Zhao",
+      "focus": "Authenticity and ethics balance, humanist core",
+      "prompt_file": "prompts/specialists/zhao.md"
+    },
+    "researcher": {
+      "name": "Research Specialist",
+      "focus": "Comps, market signals, deal structures, gap-filling research",
+      "prompt_file": "prompts/specialists/researcher.md"
+    },
+    "quality_analyst": {
+      "name": "Quality Analyst",
+      "focus": "Rigor audits, drift prevention, clarity checks",
+      "prompt_file": "prompts/specialists/quality_analyst.md"
+    }
+  }
+}
