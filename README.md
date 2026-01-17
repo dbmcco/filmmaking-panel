@@ -2,7 +2,7 @@ ABOUTME: Filmmaking Scenario Panel overview and usage.
 
 # Filmmaking Scenario Panel
 
-Single-panel scenario planning for screenwriting and filmmaking decisions. The panel balances creative integrity and commercial viability, with focus routing set during intake.
+Claude Code-powered, single-panel scenario planning for screenwriting and filmmaking decisions. The panel balances creative integrity and commercial viability, with focus routing set during intake.
 
 ## What This Is
 
