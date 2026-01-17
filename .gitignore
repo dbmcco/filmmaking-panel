@@ -8,6 +8,7 @@
 *.swp
 *~
 .seed-*
+.beads/
 
 # Active scenarios (don't commit user data)
 scenarios/active/*
