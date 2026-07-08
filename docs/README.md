@@ -61,3 +61,9 @@ Primary focus is selected in intake; secondary focus is optional.
 
 See persona dossiers in docs/personas/ and the overview in
 docs/persona-index.md.
+
+## Additional Design Notes
+
+- `claude-cowork-film-prep-plugin.md` - proposed Claude Cowork plugin and desktop extension for film preproduction.
+- `storyboard-integration-api-research-2026-03-10.md` - current research on Boords, StudioBinder, Anthropic connectors, and Zapier MCP.
+- `boords-vs-krock-for-sister-2026-03-13.md` - decision memo for choosing the first storyboard tool around Claude Cowork.

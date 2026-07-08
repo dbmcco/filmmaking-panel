@@ -83,6 +83,9 @@ Typical artifacts include:
 
 - `docs/worldview-intake.md` - Phase 0 worldview capture + focus routing.
 - `docs/persona-index.md` - persona list and dossier locations.
+- `docs/claude-cowork-film-prep-plugin.md` - design for a filmmaker-focused Claude Cowork plugin and desktop extension.
+- `docs/storyboard-integration-api-research-2026-03-10.md` - Boords vs. StudioBinder integration research and recommendation.
+- `docs/boords-vs-krock-for-sister-2026-03-13.md` - focused recommendation memo for a filmmaker already using Claude Cowork.
 - `docs/personas/` - sourced persona dossiers.
 
 ## Directory Structure
